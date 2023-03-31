@@ -164,8 +164,8 @@ final class InfoPlistContentProvider: InfoPlistContentProviding {
             ],
             "UIApplicationSceneManifest": [
                 "UIApplicationSupportsMultipleScenes": false,
-                "UISceneConfigurations": [:],
-            ],
+                "UISceneConfigurations": [String: Any](),
+            ] as [String : Any],
         ]
 
         if iPadSupport {
@@ -231,7 +231,7 @@ final class InfoPlistContentProvider: InfoPlistContentProviding {
             "NSExtension": [
                 "NSExtensionAttributes": extensionAttributes,
                 "NSExtensionPointIdentifier": "com.apple.watchkit",
-            ],
+            ] as [String : Any],
             "WKExtensionDelegateClassName": "$(PRODUCT_MODULE_NAME).ExtensionDelegate",
         ]
     }

@@ -107,7 +107,11 @@ final class TargetRunnerTests: TuistUnitTestCase {
             arguments: []
         )
 
-        await waitForExpectations(timeout: 1.0)
+#if compiler(<5.8)
+        await waitForExpectations(timeout: 1)
+#else
+        await fulfillment(of: [expectation], timeout: 1)
+#endif
     }
 
     func test_runsExecutable_when_platform_is_macOS_and_product_is_commandLineTool() async throws {

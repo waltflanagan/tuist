@@ -2,6 +2,7 @@ import Foundation
 import TSCBasic
 import TuistGraph
 @testable import TuistCore
+import TuistGraphTesting
 
 extension WorkspaceWithProjects {
     public static func test(

@@ -2,6 +2,8 @@ import Foundation
 import TSCBasic
 import TuistCore
 import TuistGraph
+import TuistSupport
+import TuistGraphTesting
 
 extension GraphDependencyReference {
     public static func testFramework(

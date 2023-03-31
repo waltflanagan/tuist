@@ -60,8 +60,8 @@ final class InfoPlistContentProviderTests: XCTestCase {
             "CFBundleInfoDictionaryVersion": "6.0",
             "UIApplicationSceneManifest": [
                 "UIApplicationSupportsMultipleScenes": false,
-                "UISceneConfigurations": [:],
-            ],
+                "UISceneConfigurations": [String: Any](),
+            ] as [String : Any],
         ])
     }
 
@@ -100,8 +100,8 @@ final class InfoPlistContentProviderTests: XCTestCase {
             "CFBundleInfoDictionaryVersion": "6.0",
             "UIApplicationSceneManifest": [
                 "UIApplicationSupportsMultipleScenes": false,
-                "UISceneConfigurations": [:],
-            ],
+                "UISceneConfigurations": [String: Any](),
+            ] as [String : Any],
         ])
     }
 
@@ -330,7 +330,7 @@ final class InfoPlistContentProviderTests: XCTestCase {
                     "WKAppBundleIdentifier": "io.tuist.my.app.id.mywatchapp",
                 ],
                 "NSExtensionPointIdentifier": "com.apple.watchkit",
-            ],
+            ] as [String : Any],
             "WKExtensionDelegateClassName": "$(PRODUCT_MODULE_NAME).ExtensionDelegate",
             "ExtraAttribute": "Value",
         ])
