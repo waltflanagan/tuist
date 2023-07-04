@@ -311,23 +311,25 @@ final class ConfigGenerator: ConfigGenerating {
     }
     
     private func deploymentTargetDerivedSettings(target: Target) -> SettingsDictionary {
-        guard let deploymentTarget = target.deploymentTarget else {
-            return [:]
-        }
-
+        
         var settings: SettingsDictionary = [:]
-
-        switch deploymentTarget {
-        case let .iOS(version):
-            settings["IPHONEOS_DEPLOYMENT_TARGET"] = .string(version)
-        case let .macOS(version):
-            settings["MACOSX_DEPLOYMENT_TARGET"] = .string(version)
-        case let .watchOS(version):
-            settings["WATCHOS_DEPLOYMENT_TARGET"] = .string(version)
-        case let .tvOS(version):
-            settings["TVOS_DEPLOYMENT_TARGET"] = .string(version)
+        
+        if let iOSVersion = target.deploymentTargets.iOS {
+            settings["IPHONEOS_DEPLOYMENT_TARGET"] = .string(iOSVersion)
         }
-
+        
+        if let macOSVersion = target.deploymentTargets.macOS {
+            settings["MACOSX_DEPLOYMENT_TARGET"] = .string(macOSVersion)
+        }
+        
+        if let watchOSVersion = target.deploymentTargets.watchOS {
+            settings["WATCHOS_DEPLOYMENT_TARGET"] = .string(watchOSVersion)
+        }
+        
+        if let tvOSVersion = target.deploymentTargets.tvOS {
+            settings["TVOS_DEPLOYMENT_TARGET"] = .string(tvOSVersion)
+        }
+           
         return settings
     }
 
